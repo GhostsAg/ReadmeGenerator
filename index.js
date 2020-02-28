@@ -103,7 +103,7 @@ inquirer.prompt([
 
         ## Questions
 
-        ${response.questions}   @@@some questions
+        ${response.questions}  
 
         ## Written By
         * ${response.author}.
@@ -133,19 +133,6 @@ inquirer.prompt([
     for (language of langArr){
         stringArr += `* ${language}.\n\t`;
     }
-
-    // Readme template
-    
-
-    // write readme
-    /*
-    fs.writeFile("README.md", template, (err) => {
-        if (err) {
-            throw err;
-        }
-        console.log("Succeded making README.md")
-    })
-    */
 });
 
 function getData (queryUrl) {
