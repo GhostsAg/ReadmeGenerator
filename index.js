@@ -13,7 +13,7 @@ inquirer.prompt([
     },
     {
         name: "tableOfContents",
-        message: "Write a table of contents"
+        message: "Write a table of contents (separate sections with commas.)"
     },
     {
         name: "installation",
@@ -65,65 +65,98 @@ inquirer.prompt([
         name: "username"
     }
 ]).then(function(response) {
-    
+    // Axios call
     const queryUrl = `https://api.github.com/users/${response.username}`;
-    let gitPic = new String;
-    let userEmail = new String;
-    axios.get(queryUrl).then(function({data}) {
-        console.log(data);
-        gitPic = data.avatar_url;
-        userEmail = data.email;
-        console.log(gitPic);
-    });
-    console.log(gitPic);
+    let userEmail;
+    let gitPicUrl;
+    const axiosCall = getData(queryUrl).then(function(response){
+        userEmail = response.email;
+        gitPicUrl = response.avatar_url;
+    }).then( function() {
+        let template = `
+        # ${response.title}
 
+        ${response.description}.
+
+        ## Table of Contents
+        
+        ${genContent}
+
+        ## Installation
+        * ${response.installation}.
+
+        ## Instructions
+        * ${response.instructions}.
+
+        ## License
+        * ${response.license}.
+
+        ## Contributors
+        * ${response.contributors}.
+
+        ## Tests
+        * ${response.tests}.
+
+        ## Written In
+
+        ${stringArr}
+
+        ## Questions
+
+        ${response.questions}   @@@some questions
+
+        ## Written By
+        * ${response.author}.
+        * ${gitPicUrl}.
+        * email: ${userEmail}.
+        `;
+        fs.writeFile("README.md", template, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("Succeded making README.md");
+        })
+    });
+
+    // Table of contents
+    let contArr = response.tableOfContents.split(", ");
+    let genContent = new Array;
+    let i = 1;
+    for (content of contArr) {
+        genContent += `${i} - ${content}.\n\t`;
+        i++;
+    }
+
+    // Languages
     let langArr = response.languages;
     let stringArr = new Array;
     for (language of langArr){
         stringArr += `* ${language}.\n\t`;
     }
-    let template = `
-    # ${response.title}
 
-    ${response.description}.
+    // Readme template
+    
 
-    ## Table of Contents
-    * ${response.tableOfContents}.      @@@table of contents.
-
-    ## Installation
-    * ${response.installation}.
-
-    ## Instructions
-    * ${response.instructions}.
-
-    ## License
-    * ${response.license}.
-
-    ## Contributors
-    * ${response.contributors}.
-
-    ## Tests
-    * ${response.tests}.
-
-    ## Written In
-
-    ${stringArr}
-
-    ## Questions
-
-    ${response.questions}   @@@some questions
-
-    ## Written By
-    * ${response.author}.
-    * ${gitPic}.
-    * email: ${userEmail}.
-    `;
+    // write readme
+    /*
     fs.writeFile("README.md", template, (err) => {
         if (err) {
             throw err;
         }
         console.log("Succeded making README.md")
     })
+    */
 });
 
-
+function getData (queryUrl) {
+    return new Promise( function(resolve, reject) {
+        if (queryUrl === null) {
+            return reject(Error("queryUrl must be defined."));
+        }
+        setTimeout(function() {
+            resolve(axios.get(queryUrl).then(function({data}) {
+                return data;
+            }));
+        }, 2000);
+    });
+}
