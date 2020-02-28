@@ -1,2 +1,38 @@
-# ReadmeGenerator
-A server side application that prompts the user for content criteria and generates a formatted Readme.md file to their working directory.
+
+    # ok
+
+    ok.
+
+    ## Table of Contents
+    * ok.      @@@table of contents.
+
+    ## Installation
+    * ok.
+
+    ## Instructions
+    * ok.
+
+    ## License
+    * ok.
+
+    ## Contributors
+    * ok.
+
+    ## Tests
+    * ok.
+
+    ## Written In
+
+    * HTML.
+	* Javascript.
+	
+
+    ## Questions
+
+    ok   @@@some questions
+
+    ## Written By
+    * ok.
+    * .
+    * email: .
+    
