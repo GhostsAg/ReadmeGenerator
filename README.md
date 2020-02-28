@@ -37,6 +37,6 @@
 
         ## Written By
         * Andres A. Ledesma.
-        ![github-profile-pic](https://avatars3.githubusercontent.com/u/50811221?v=4).
+        ![github-profile-pic](https://avatars3.githubusercontent.com/u/50811221?v=4)
         * email: null.
         
