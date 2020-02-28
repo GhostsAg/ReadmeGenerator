@@ -1,43 +1,42 @@
 
-        # app name
+        # ReadmeGenerator
 
-        description.
+        Automatically generate and README.md file from your ides console.
 
         ## Table of Contents
         
-        1 - table content.
-	2 - table content.
-	3 - table cont.
-	
+        1 - Index.js
+	2 - node_modules
+	3 - package.json
+	4 - package-lock.json
+	5 - generatedReadMe.pdf
+	6 - Demonstrate.gif
 
         ## Installation
-        * description of installation.
+        * Make sure you have node and npm installed in your system and clone the repo to your working directory. After that 	      you will have to install any node module dependencies by running npm install; with this you should be able to run 	  the index.js file in the ide console by running node index.js. 
 
         ## Instructions
-        * instructions.
+        * One you run the file you will be prompted you describe your application and lastly to provide your Github username             answer all the questions in the console and select any elements from checkboxes with the space key.
 
         ## License
-        * license.
+        * Open-Source.
 
         ## Contributors
-        * contributors.
+        * N/A.
 
         ## Tests
-        * tests.
+        * This file was generated using ReadmeGenerator.
 
         ## Written In
 
-        * HTML.
-	* PHP.
-	* Go.
-	
+        * Javascript.
 
         ## Questions
-
-        questions  
+	
+	* N/A.
 
         ## Written By
-        * group or authors.
+        * **Andres A. Ledesma**.
         ![github-profile-pic](https://avatars3.githubusercontent.com/u/50811221?v=4)
-        * email: null.
+        
         
