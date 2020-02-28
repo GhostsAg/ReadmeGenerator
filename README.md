@@ -1,41 +1,42 @@
 
-        # ok
+        # ReadmeGenerator
 
-        ok.
+        Automatically generate a README.md file for your github repository just by inputting your github username and answering questions about your application..
 
         ## Table of Contents
         
-        1 - ok.
+        1 - node_modules files.
+	2 - Javascript index.js.
+	3 - package-lock.json (dependencies).
+	4 - package.json (dependecies initializer).
 	
 
         ## Installation
-        * ok.
+        * Clone the repositoy and run npm install in the parent directory to install dependencies, then simply run your application using node index.js in the console of your IDE..
 
         ## Instructions
-        * refjoe.
+        * After running node index.js in your cloned repo parent directory you will be prompted with questions in the console, answer them to best suit your application description; When prompted with a checkbox list use space to select and ENTER when done. (when finished answering all questions your README.md should be generated..
 
         ## License
-        * two.
+        * OSI.
 
         ## Contributors
-        * ok.
+        * None at the moment..
 
         ## Tests
-        * ok.
+        * This file was generated using ReadmeGenerator.
 
         ## Written In
 
-        * HTML.
-	* Javascript.
-	* C/C++.
+        * Javascript.
 	
 
         ## Questions
 
-        ok   @@@some questions
+        N/A   @@@some questions
 
         ## Written By
-        * ok.
-        * https://avatars3.githubusercontent.com/u/50811221?v=4.
+        * Andres A. Ledesma.
+        ![github-profile-pic](https://avatars3.githubusercontent.com/u/50811221?v=4).
         * email: null.
         

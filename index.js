@@ -107,7 +107,7 @@ inquirer.prompt([
 
         ## Written By
         * ${response.author}.
-        * ${gitPicUrl}.
+        ![github-profile-pic](${gitPicUrl}).
         * email: ${userEmail}.
         `;
         fs.writeFile("README.md", template, (err) => {
